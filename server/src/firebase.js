@@ -1,4 +1,5 @@
-// Import the functions you need from the SDKs you need
+console.log("하이");
+
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set, goOffline } from "firebase/database";
 import getInfo from "./dom.js";
