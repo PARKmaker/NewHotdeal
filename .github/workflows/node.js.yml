@@ -29,7 +29,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: 'server/package-lock.json'
-    - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
     - run: pwd
     - run: npm ci
-    - run: node ../server/src/firebase.js
+    - run: npm start
