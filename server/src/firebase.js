@@ -1,9 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set, goOffline } from "firebase/database";
-import dotenv from "dotenv";
 import getInfo from "./dom.js";
 import curDate from "./utils.js";
+import dotenv from "dotenv";
 
 dotenv.config();
 
