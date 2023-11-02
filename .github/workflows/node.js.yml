@@ -18,7 +18,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: 18.x
+        node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -29,5 +29,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: server/package-lock.json
-    - run: npm install
+    - run: npm ci
     - run: node server\src\firebase.js
