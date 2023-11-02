@@ -5,7 +5,7 @@ import getInfo from "./dom.js";
 import curDate from "./utils.js";
 import dotenv from "dotenv";
 
-dotenv.config();
+dotenv.config({ path: "server/.env" });
 
 const {
   API_KEY,
