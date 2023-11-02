@@ -9,7 +9,7 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron:  '*/20 * * * *' # 주기적으로 실행하기 위한 스케줄링 - cron 설정
+    - cron:  '5 * * * *' # 주기적으로 실행하기 위한 스케줄링 - cron 설정
 
 jobs:
   build:
@@ -21,7 +21,6 @@ jobs:
         node-version: ['18.17.0']
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
-    - run: pwd
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
@@ -30,16 +29,10 @@ jobs:
         cache: 'npm'
         cache-dependency-path: 'server/package-lock.json'
     
-    - run: pwd
-    
     - name: npm ci
       run: npm ci
       working-directory: ${{ env.working-directory }}
       
-    - run: pwd
-
     - name: npm start
       run: npm start
       working-directory: ${{ env.working-directory }}
-
-    - run: pwd
