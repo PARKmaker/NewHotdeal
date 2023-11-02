@@ -28,7 +28,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: ${{github.workspace}}/NewHotdeal/server/package-lock.json
+        cache-dependency-path: NewHotdeal/server/package-lock.json
     - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
     - run: npm ci
-    - run: node ${{github.workspace}}/NewHotdeal/server/src/firebase.js
+    - run: node NewHotdeal/server/src/firebase.js
