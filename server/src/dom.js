@@ -45,7 +45,6 @@ async function getGmarketInfo() {
 
     products.push(info);
   }
-  console.log("Dom gmarket");
 
   return products;
 }
@@ -166,7 +165,6 @@ async function get11stInfo() {
 
     products.push(productInfo);
   }
-  console.log("Dom 11st");
   return products;
 }
 
@@ -179,9 +177,7 @@ async function getInfo() {
     get11stInfo(),
   ]);
 
-  console.log("Dom getInfo");
   const allProductInfo = [...gmarketInfo, ...st11Info];
-  console.log(allProductInfo.length);
   return allProductInfo;
 }
 
