@@ -36,14 +36,15 @@ jobs:
       - name: create dotenv
         run: |
           touch .env
-          echo "API_KEY=${{ secrets.FIREBASE_API_KEY }}" >> .env
-          echo "APP_ID=${{ secrets.FIREBASE_APP_ID }}" >> .env
-          echo "AUTH_DOMAIN=${{ secrets.FIREBASE_AUTH_DOMAIN }}" >> .env
-          echo "DATABASE_URL=${{ secrets.FIREBASE_DATABASE_URL }}" >> .env
-          echo "PROJECT_ID=${{ secrets.FIREBASE_PROJECT_ID }}" >> .env
-          echo "STORAGE_BUCKET=${{ secrets.FIREBASE_STORAGE_BUCKET }}" >> .env
-          echo "MESSAGING_SENDER_ID=${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}" >> .env
-          echo "MEASUREMENT_ID=${{ secrets.FIREBASE_MEASUREMENT_ID }}" >> .env
+          touch .env
+          echo "API_KEY=${{ secrets.API_KEY }}" >> .env
+          echo "APP_ID=${{ secrets.APP_ID }}" >> .env
+          echo "AUTH_DOMAIN=${{ secrets.AUTH_DOMAIN }}" >> .env
+          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env
+          echo "PROJECT_ID=${{ secrets.PROJECT_ID }}" >> .env
+          echo "STORAGE_BUCKET=${{ secrets.STORAGE_BUCKET }}" >> .env
+          echo "MESSAGING_SENDER_ID=${{ secrets.MESSAGING_SENDER_ID }}" >> .env
+          echo "MEASUREMENT_ID=${{ secrets.MEASUREMENT_ID }}" >> .env
           ls -al
 
       - name: npm start
