@@ -1,12 +1,11 @@
-console.log("하이");
-
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set, goOffline } from "firebase/database";
 import getInfo from "./dom.js";
 import curDate from "./utils.js";
 import dotenv from "dotenv";
 
-dotenv.config({ path: "server/.env" });
+dotenv.config();
+// dotenv.config({ path: "server/.env" });
 
 const {
   API_KEY,
