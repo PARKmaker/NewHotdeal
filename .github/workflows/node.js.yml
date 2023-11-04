@@ -9,7 +9,7 @@ on:
   pull_request:
     branches: ["main"]
   schedule:
-    - cron: "* */90 * * *" # 90분 마다 주기적으로 실행하기 위한 스케줄링 - cron 설정
+    - cron: "30 8,10,12,14,16,18,20,22 * * *" # 8, 10, 12, 14, 16, 18, 20, 22시 30분 마다 실행
 
 jobs:
   build:
@@ -25,11 +25,6 @@ jobs:
         uses: zcong1993/setup-timezone@master
         with:
           timezone: Asia/Seoul
-          
-      - name: Not on Sunday or Saturday and daybreak
-        if: github.event.schedule != '* 1-8 * * *' # 토, 일과 매일 새벽 제외
-        # if: github.event.schedule != '* 1-8 * * 0,6' # 토, 일과 매일 새벽 제외
-        run: echo "This step will be skipped on Sunday and Saturday and daybreak"
         
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
