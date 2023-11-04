@@ -9,7 +9,7 @@ on:
   pull_request:
     branches: ["main"]
   schedule:
-    - cron: "* */2 * * *" # 주기적으로 실행하기 위한 스케줄링 - cron 설정
+    - cron: "30 8,10,12,14,16,18,20,22 * * *" # 8, 10, 12, 14, 16, 18, 20, 22시 30분 마다 실행
 
 jobs:
   build:
@@ -21,6 +21,11 @@ jobs:
         node-version: ["18.17.0"]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
+      - name: Setup timezone
+        uses: zcong1993/setup-timezone@master
+        with:
+          timezone: Asia/Seoul
+        
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
