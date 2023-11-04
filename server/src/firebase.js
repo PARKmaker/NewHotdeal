@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set, goOffline } from "firebase/database";
 import getInfo from "./dom.js";
-import curDate from "./utils.js";
+import { year, month, day } from "./utils.js";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -32,12 +32,12 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-async function writeProductsData(date) {
+async function writeProductsData() {
   const database = getDatabase(app);
   const info = await getInfo();
 
-  Promise.resolve(set(ref(database, "products/" + date), info))
+  set(ref(database, `products/${year}/${month}/${day}`), info)
     .then(() => goOffline(database)) //https://firebase.google.com/docs/reference/js/database.md?hl=ko#gooffline
     .catch((e) => console.error(e));
 }
-writeProductsData(curDate);
+writeProductsData();
