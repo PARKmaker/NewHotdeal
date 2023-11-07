@@ -101,8 +101,8 @@ async function get11stInfo() {
           .text()
           .replace("원", "")
           .trim(), // 기존 가격, 있거나 없음
-        endDate: infoElements.find(endDate).text().trim(),
       },
+      endDate: infoElements.find(endDate).text().trim(),
     };
 
     return productInfo;
