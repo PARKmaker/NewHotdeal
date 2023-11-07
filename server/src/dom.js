@@ -108,34 +108,34 @@ async function get11stInfo() {
     return productInfo;
   }
 
-  // amazonProductInfoElement.each((idx, el) => {
-  //   const classSelecters = {
-  //     info: ".c-card-item__info",
-  //     title: ".c-card-item__name > dd",
-  //     href: "href",
-  //     thumnail: ".c-card-item__thumb-img > img",
-  //     discountRate: ".c-card-item__rate > .value",
-  //     discountedPrice: ".c-card-item__price .value",
-  //     originalPrice: "",
-  //     endDate: "",
-  //   };
+  amazonProductInfoElement.each((idx, el) => {
+    const classSelecters = {
+      info: ".c-card-item__info",
+      title: ".c-card-item__name > dd",
+      href: "href",
+      thumnail: ".c-card-item__thumb-img > img",
+      discountRate: ".c-card-item__rate > .value",
+      discountedPrice: ".c-card-item__price .value",
+      originalPrice: "",
+      endDate: "",
+    };
 
-  //   products.push(getInfoFromElement11st($(el), classSelecters));
-  // });
+    products.push(getInfoFromElement11st($(el), classSelecters));
+  });
 
-  // emergencyAirliftProductInfoElement.each((idx, el) => {
-  //   const classSelecters = {
-  //     info: ".prd_info",
-  //     title: ".fs_16",
-  //     href: "href",
-  //     thumnail: ".prd_img > img",
-  //     discountRate: ".price_info > .sale",
-  //     discountedPrice: ".sale_price",
-  //     originalPrice: ".normal_price",
-  //     endDate: ".chgTime",
-  //   };
-  //   products.push(getInfoFromElement11st($(el), classSelecters));
-  // });
+  emergencyAirliftProductInfoElement.each((idx, el) => {
+    const classSelecters = {
+      info: ".prd_info",
+      title: ".fs_16",
+      href: "href",
+      thumnail: ".prd_img > img",
+      discountRate: ".price_info > .sale",
+      discountedPrice: ".sale_price",
+      originalPrice: ".normal_price",
+      endDate: ".chgTime",
+    };
+    products.push(getInfoFromElement11st($(el), classSelecters));
+  });
 
   // 11번가를 스크래핑 할 때 카테고리별 아이템 부분은 html로 가져오지 못하고 scirpt형태로 가져오게됨
   // 그로 인해 cheerio로 Dom형태로 만들 수 없어 기존 처럼 스크래핑이 안되어
