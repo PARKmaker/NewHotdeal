@@ -15,3 +15,6 @@ export const month = dateConcatZero(tempmonth);
 // const minute = tempMinute < 10 ? "0" + tempMinute : tempMinute;
 
 // export default curDate;
+export function removeComma(str) {
+  return str.replace(",", "");
+}

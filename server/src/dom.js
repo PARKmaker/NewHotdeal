@@ -91,7 +91,8 @@ async function get11stInfo() {
           .text()
           .replace("%", "")
           .trim(), // 할인율, 있거나 없음
-        discountedPrice: infoElements // 할인된 가격
+        //할인된 가격
+        discountedPrice: infoElements
           .find(discountedPrice)
           .text()
           .replace("원", "")
