@@ -3,6 +3,7 @@
 
 import * as cheerio from "cheerio";
 import vm from "vm";
+import { removeComma } from "./utils.js";
 
 async function getGmarketProductInfoText(url) {
   const response = await fetch(url);
@@ -86,22 +87,17 @@ async function get11stInfo() {
       href: anckerElements.attr(href), // 상품 링크
       title: infoElements.find(title).text().replace('"', "").trim(), // 타이틀
       info: {
-        discountRate: infoElements
-          .find(discountRate)
-          .text()
-          .replace("%", "")
-          .trim(), // 할인율, 있거나 없음
+        // 할인율, 있거나 없음
+        discountRate: removeComma(
+          infoElements.find(discountRate).text().replace("%", "").trim()
+        ),
         //할인된 가격
-        discountedPrice: infoElements
-          .find(discountedPrice)
-          .text()
-          .replace("원", "")
-          .trim(),
-        originalPrice: infoElements
-          .find(originalPrice)
-          .text()
-          .replace("원", "")
-          .trim(), // 기존 가격, 있거나 없음
+        discountedPrice: removeComma(
+          infoElements.find(discountedPrice).text().replace("원", "").trim()
+        ),
+        originalPrice: removeComma(
+          infoElements.find(originalPrice).text().replace("원", "").trim()
+        ), // 기존 가격, 있거나 없음
       },
       endDate: infoElements.find(endDate).text().trim(),
     };
@@ -156,9 +152,9 @@ async function get11stInfo() {
       href: elem.url1, // 상품 링크
       thumnail: elem.prdImgUrl, // 썸네일
       info: {
-        discountRate: elem.dscRt, // 할인율, 있거나 없음
-        discountedPrice: elem.finalDscPrc, // 할인된 가격
-        originalPrice: elem.selPrc, // 기존 가격, 있거나 없음
+        discountRate: removeComma(elem.dscRt), // 할인율, 있거나 없음
+        discountedPrice: removeComma(elem.finalDscPrc), // 할인된 가격
+        originalPrice: removeComma(elem.selPrc), // 기존 가격, 있거나 없음
       },
       // category: elem.category1,
       endDate: elem.endDt,

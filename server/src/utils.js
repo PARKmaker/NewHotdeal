@@ -16,5 +16,5 @@ export const month = dateConcatZero(tempmonth);
 
 // export default curDate;
 export function removeComma(str) {
-  return str.replace(",", "");
+  return Number(str.replaceAll(",", ""));
 }
