@@ -8,6 +8,7 @@ export class Store implements ItemsStore {
   }
 
   get hasItems() {
+    console.log(this.items);
     return this.items.length > 0;
   }
 

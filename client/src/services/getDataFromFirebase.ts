@@ -55,7 +55,6 @@ export async function getData() {
 
   const loadedItems: ItemsFeed[] = [];
 
-  // console.log(response);
   for (const key in responseData) {
     loadedItems.push({
       id: Number(`${year}${month}${day}${key}`),
@@ -73,32 +72,5 @@ export async function getData() {
     });
   }
 
-  console.log(loadedItems);
-
-  // get(child(dbRef, `products/${year}/${month}/${day}`))
-  //   .then((snapshot) => {
-  //     if (snapshot.exists()) {
-  //       // products = snapshot.val();
-  //       items = snapshot.val();
-  //     } else {
-  //       // 서버에 저장이 안되어 당일 데이터가 없는 경우 전날 데이터 불러온다.
-  //       const [newYear, newMonth, newDay] = getDayBefore(year, month, day);
-  //       get(child(dbRef, `products/${newYear}/${newMonth}/${newDay}`)).then(
-  //         (snapshot) => {
-  //           if (snapshot.exists()) {
-  //             // products = snapshot.val();
-  //             items = snapshot.val();
-  //           } else {
-  //             return null;
-  //           }
-  //         }
-  //       );
-  //     }
-  //   })
-  //   .catch((error) => {
-  //     console.error(error);
-  //   });
+  return loadedItems;
 }
-
-// const app = initializeApp(firebaseConfig);
-// export const dbRef = ref(getDatabase(app));
