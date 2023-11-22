@@ -1,0 +1,34 @@
+.nav {
+  height: 3.5rem;
+  grid-area: nav;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.nav li {
+  margin: 0 3rem;
+}
+
+.nav li:hover,
+.nav li:active {
+  color: white;
+  border-bottom: 2px solid #dadada;
+}
+
+.nav li.choice {
+  color: rgb(65, 34, 178);
+  font-weight: bold;
+}
+
+.product__list {
+  background-color: white;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}

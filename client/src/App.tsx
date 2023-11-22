@@ -4,6 +4,8 @@ import { getData } from "./services/getDataFromFirebase";
 import { ItemsStore } from "./models/item";
 import { Store } from "./store";
 import Main from "./components/Layout/Main";
+import Layout from "./components/Layout/Layout";
+import Products from "./components/Shop/Products";
 
 // 파이어 베이스에서 상품 목록을 가져올 때 한번만 가져와 저장하고
 // 홈페이지가 유지되는 동안 저장한 아이템 목록을 사용 하고자 한다.
@@ -35,7 +37,14 @@ function App() {
 
   return (
     <div className="App">
-      <Main></Main>
+      {/* <Main></Main> */}
+      <div className="app-container">
+        <Layout>
+          <main>
+            <Products />
+          </main>
+        </Layout>
+      </div>
     </div>
   );
 }

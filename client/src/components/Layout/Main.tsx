@@ -1,71 +1,72 @@
 import React from "react";
-import classes from "./Main.module.css";
+import style from "./Main.module.css";
 import logo from "../../assets/logo.png";
 
 const Main = () => {
   return (
-    <div className={classes[`main-container`]}>
-      <header className={classes[`main-header`]}>
-        <div>
-          <a href="#" className={classes[`main-header__brand`]}>
+    <div className={style[`main-container`]}>
+      <header className={style[`main-header`]}>
+        <div className={style[`main-header__brand`]}>
+          <a href="#">
             <img src={logo} alt="logo" />
           </a>
         </div>
-        <form className={classes["main-header__search"]}>
-          <label htmlFor="search"></label>
-          <input type="text" id="search" name="search" />
-        </form>
-        <nav className={classes["main-header-nav"]}>
-          <ul className={classes["main-header-nav__items"]}>
-            <li className={classes["main-header-nav__item"]}>로그인</li>
-            <li className={classes["main-header-nav__item"]}>회원 정보</li>
-          </ul>
-        </nav>
+        <div className={style["main-header__menu"]}>
+          <form className={style["main-header__search"]}>
+            <label htmlFor="search"></label>
+            <img
+              className={style["search-icon"]}
+              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png"
+            ></img>
+            <input
+              type="text"
+              id="search"
+              name="search"
+              placeholder="제품 검색"
+            />
+          </form>
+          <nav className={style["main-header-nav"]}>
+            <ul className={style["main-header-nav__items"]}>
+              <li className={style["main-header-nav__item"]}>로그인</li>
+              <li className={style["main-header-nav__item"]}>회원 정보</li>
+            </ul>
+          </nav>
+        </div>
       </header>
-      <nav className={classes[`main-nav`]}>
-        <li className={classes["choice"]}>11번가</li>
+      <nav className={style[`main-nav`]}>
+        <li>전체</li>
+        <li className={style["choice"]}>11번가</li>
         <li>G마켓</li>
       </nav>
       <main>
-        <ul className={classes[`main-items`]}>
-          <li className={classes["item"]}>
-            <div>
-              <h3>물건 이름1</h3>
-              <div className={classes["description"]}>설명1</div>
-              <div className={classes["price"]}>가격1</div>
-            </div>
-          </li>
-          <li className={classes["item"]}>
-            <div>
-              <h3>물건 이름2</h3>
-              <div className={classes["description"]}>설명2</div>
-              <div className={classes["price"]}>가격2</div>
-            </div>
-          </li>
-          <li className={classes["item"]}>
-            <div>
-              <h3>물건 이름3</h3>
-              <div className={classes["description"]}>설명3</div>
-              <div className={classes["price"]}>가격3</div>
-            </div>
-          </li>
-          <li className={classes["item"]}>
-            <div>
-              <h3>물건 이름4</h3>
-              <div className={classes["description"]}>설명4</div>
-              <div className={classes["price"]}>가격4</div>
-            </div>
-          </li>
-          <li className={classes["item"]}>
-            <div>
-              <h3>물건 이름5</h3>
-              <div className={classes["description"]}>설명5</div>
-              <div className={classes["price"]}>가격5</div>
+        <ul className={style[`item__list`]}>
+          <li id="1">
+            <div className={style["item"]}>
+              <a href="http://item.gmarket.co.kr/Item?goodscode=3239643248">
+                <div className={style["item__img"]}>
+                  <img
+                    src="//image.gmarket.co.kr/hanbando/202311/af108648-79f7-4120-adf8-923c8790bf48.jpg"
+                    alt=""
+                  />
+                </div>
+                <p className={style["item__title"]}>
+                  (15%+10%쿠폰가 9900원) 1+1 윈터 마스크캡 겨울 남녀공용 귀달이
+                  방한모자 군밤모자 / 사은품 넥워머 Lorem, ipsum dolor sit amet
+                  consectetur adipisicing elit. Est aut officia, repellat id ad
+                  magni optio dolorum, doloremque, consequuntur iste dolore
+                  libero explicabo quas tempora voluptate eaque ea excepturi
+                  provident?
+                </p>
+              </a>
+              <div className={style["item__info"]}>
+                <em className={style["item__discount_rate"]}>10%</em>
+                <strong className={style["item__sale_price"]}>12,300원</strong>
+                <del className={style["item__normal_price"]}>30,000원</del>
+              </div>
             </div>
           </li>
         </ul>
       </main>
-      <footer className={classes[`main-footer`]}>푸터</footer>
     </div>
   );
 };
