@@ -4,6 +4,7 @@
 import * as cheerio from "cheerio";
 import vm from "vm";
 import { removeComma } from "./utils.js";
+import { nanoid } from "nanoid";
 
 async function getGmarketProductInfoText(url) {
   const response = await fetch(url);
@@ -30,6 +31,7 @@ async function getGmarketInfo() {
 
   for (let elem of productsInfoContent) {
     const info = {
+      id: nanoid(),
       siteName: "G마켓",
       title: elem.goodsName, // 타이틀
       href: elem.itemUrl, // 상품 링크
@@ -82,6 +84,7 @@ async function get11stInfo() {
     const anckerElements = element.children("a");
     const infoElements = element.find(info);
     const productInfo = {
+      id: nanoid(),
       siteName: "11번가",
       thumnail: anckerElements.find(thumnail).attr("src"), // 썸네일
       href: anckerElements.attr(href), // 상품 링크
@@ -147,6 +150,7 @@ async function get11stInfo() {
 
   for (let elem of infoContents) {
     const productInfo = {
+      id: nanoid(),
       siteName: "11번가",
       title: elem.prdNm, // 타이틀
       href: elem.url1, // 상품 링크
