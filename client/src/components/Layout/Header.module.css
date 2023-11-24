@@ -31,36 +31,6 @@
   justify-content: end;
 }
 
-.header__search {
-  width: 22rem;
-  padding: 1rem;
-  min-width: 18rem;
-  /* margin-left: 48rem; */
-  position: relative;
-}
-
-.search-icon {
-  position: absolute;
-  width: 1rem;
-  top: 1.6rem;
-  right: 23px;
-  margin: 0px;
-}
-
-.header__search input {
-  width: 100%;
-  /* border: 2px solid transparent; */
-  border: 2px solid rgb(25, 206, 96);
-  height: 2.4rem;
-  background: #f6f6f6;
-}
-
-.header__search input:focus {
-  outline: none;
-  /* background-color: #d8f3df; */
-  border: 1px solid #dadada;
-}
-
 .header-nav {
   display: flex;
 }

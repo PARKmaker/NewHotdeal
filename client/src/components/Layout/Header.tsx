@@ -11,19 +11,6 @@ const Header: React.FC = () => {
         </a>
       </div>
       <div className={style["header__menu"]}>
-        <form className={style["header__search"]}>
-          <label htmlFor="search"></label>
-          <img
-            className={style["search-icon"]}
-            src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png"
-          ></img>
-          <input
-            type="text"
-            id="search"
-            name="search"
-            placeholder="제품 검색"
-          />
-        </form>
         <nav className={style["header-nav"]}>
           <ul className={style["header-nav__items"]}>
             <li className={style["header-nav__item"]}>로그인</li>

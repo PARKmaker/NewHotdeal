@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { child, get, getDatabase, ref } from "firebase/database";
+import { getDatabase, ref, child, get } from "firebase/database";
 import { year, month, day, getDayBefore } from "../utils/date";
-import { ItemsFeed } from "../models/item";
+import { ProductFeed } from "../models/product";
 
 const {
   REACT_APP_API_KEY,
@@ -25,9 +25,14 @@ const firebaseConfig = {
   measurementId: REACT_APP_MEASUREMENT_ID,
 };
 
+const app = initializeApp(firebaseConfig);
+const dbRef = ref(getDatabase(app));
+
+/**
+ * Firebase에서 오늘, 어제 상품 데이터 가져오기
+ */
+
 export async function getData() {
-  const app = initializeApp(firebaseConfig);
-  const dbRef = ref(getDatabase(app));
   const [yesterdayYear, yesterdayMonth, yesterdayDay] = getDayBefore(
     year,
     month,
@@ -53,11 +58,11 @@ export async function getData() {
     responseData = responseSnapshotYesterday.val();
   }
 
-  const loadedItems: ItemsFeed[] = [];
+  const loadedProducts: ProductFeed[] = [];
 
   for (const key in responseData) {
-    loadedItems.push({
-      id: Number(`${year}${month}${day}${key}`),
+    loadedProducts.push({
+      id: responseData[key].id,
       title: responseData[key].title,
       thumnail: responseData[key].thumnail,
       href: responseData[key].href,
@@ -72,5 +77,5 @@ export async function getData() {
     });
   }
 
-  return loadedItems;
+  return loadedProducts;
 }

@@ -1,11 +1,12 @@
-export interface ItemsStore {
-  getAllItems: () => ItemsFeed[];
-  setItems: (items: ItemsFeed[]) => void;
+export interface ProductStore {
+  getAllProducts: () => ProductFeed[];
+  setProducts: (products: ProductFeed[]) => void;
   makeRead: (id: number) => void;
-  hasItems: boolean;
+  getSiteNames: () => string[];
+  hasProducts: boolean;
 }
-export interface Items {
-  id: number;
+export interface Product {
+  id: string;
   title: string;
   thumnail: string;
   href: string;
@@ -18,6 +19,6 @@ export interface Items {
   endDate: string;
 }
 
-export interface ItemsFeed extends Items {
+export interface ProductFeed extends Product {
   read?: boolean;
 }

@@ -2,8 +2,7 @@ import React from "react";
 import style from "./ProductItem.module.css";
 
 interface productProps {
-  key: number;
-  id: number;
+  id: string;
   title: string;
   discountRate: string | number;
   discountedPrice: string | number;
@@ -11,12 +10,10 @@ interface productProps {
   siteName: string;
   thumnail: string;
   href: string;
-  children?: React.ReactNode;
 }
 
 const ProductItem = (props: productProps) => {
   const {
-    key,
     id,
     title,
     discountRate,

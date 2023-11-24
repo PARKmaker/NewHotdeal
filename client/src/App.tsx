@@ -1,8 +1,5 @@
 import "./App.css";
 import React, { useState } from "react";
-import { getData } from "./services/getDataFromFirebase";
-import { ItemsStore } from "./models/item";
-import { Store } from "./store";
 import Main from "./components/Layout/Main";
 import Layout from "./components/Layout/Layout";
 import Products from "./components/Shop/Products";
