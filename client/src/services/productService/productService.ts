@@ -1,5 +1,4 @@
-import { filterValues } from "../../components/Shop/Products";
-import { ProductFeed, ProductStore } from "../../models/product";
+import { ProductFeed, ProductStore, FilterValues } from "../../models/product";
 
 export class ProductService implements ProductStore {
   private products: ProductFeed[];
@@ -33,7 +32,7 @@ export class ProductService implements ProductStore {
     return [];
   }
 
-  getFilterProducts(filterValues: filterValues) {
+  getFilterProducts(filterValues: FilterValues) {
     return this.products.filter(
       (product) =>
         !filterValues.brands ||

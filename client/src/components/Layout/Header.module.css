@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   border-bottom: 1px solid #dadada;
-  padding: 0.25rem 1rem;
+  padding: 0.75rem 1rem;
   z-index: 60;
   display: flex;
   align-items: center;
@@ -29,6 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: end;
+  font-weight: bold;
 }
 
 .header-nav {
@@ -45,4 +46,35 @@
 
 .header-nav__item {
   margin: 0 1rem;
+}
+
+.search {
+  width: 25rem;
+  /* padding: 1rem; */
+  min-width: 18rem;
+  /* margin-left: 48rem; */
+  position: relative;
+}
+
+.search input {
+  width: 100%;
+  /* border: 2px solid transparent; */
+  border: 2px solid rgb(25, 206, 96);
+  height: 2.2rem;
+  background: #f6f6f6;
+  padding: 0.5rem;
+}
+
+.icon {
+  position: absolute;
+  width: 1rem;
+  top: 10px;
+  right: 8px;
+  margin: 0px;
+}
+
+.search input:focus {
+  outline: none;
+  /* background-color: #d8f3df; */
+  border: 1px solid #dadada;
 }

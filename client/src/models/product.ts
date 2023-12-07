@@ -3,6 +3,7 @@ export interface ProductStore {
   setProducts: (products: ProductFeed[]) => void;
   makeRead: (id: number) => void;
   getSiteNames: () => string[];
+  getFilterProducts: (filtervalues: FilterValues) => ProductFeed[];
   hasProducts: boolean;
 }
 export interface Product {
@@ -21,4 +22,9 @@ export interface Product {
 
 export interface ProductFeed extends Product {
   read?: boolean;
+}
+
+export interface FilterValues {
+  brands: string[];
+  search: string;
 }

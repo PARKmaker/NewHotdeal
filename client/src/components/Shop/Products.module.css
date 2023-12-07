@@ -8,17 +8,17 @@
   margin-top: 1rem;
 }
 
-.nav li {
+.nav > ui > li {
   margin: 0 3rem;
 }
 
-.nav li:hover,
-.nav li:active {
+.nav > ui > li:hover,
+.nav > ui > li:active {
   color: white;
   border-bottom: 2px solid #dadada;
 }
 
-.nav li.choice {
+.nav > ui > li.choice {
   color: rgb(65, 34, 178);
   font-weight: bold;
 }

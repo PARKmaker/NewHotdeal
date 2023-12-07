@@ -1,35 +1,18 @@
 import React from "react";
 import style from "./ProductItem.module.css";
+import { ProductFeed } from "../../models/product";
 
-interface productProps {
-  id: string;
-  title: string;
-  discountRate: string | number;
-  discountedPrice: string | number;
-  originalPrice: string | number;
-  siteName: string;
-  thumnail: string;
-  href: string;
-}
+const ProductItem = (props: ProductFeed) => {
+  const { id, title, info, siteName, thumnail, href } = props;
 
-const ProductItem = (props: productProps) => {
-  const {
-    id,
-    title,
-    discountRate,
-    discountedPrice,
-    originalPrice,
-    siteName,
-    thumnail,
-    href,
-  } = props;
+  const { discountRate, discountedPrice, originalPrice } = info;
 
-  const onSale = (rate: productProps["discountRate"]) => {
+  const onSale = (rate: ProductFeed["info"]["discountRate"]) => {
     return Number(rate) > 0;
   };
 
   return (
-    <li id={String(id)} data-siteName={siteName}>
+    <li id={id} data-sitename={siteName}>
       <div className={style["product"]}>
         <a href={href}>
           <div className={style["product__img"]}>
