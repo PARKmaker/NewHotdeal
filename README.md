@@ -33,8 +33,8 @@
 
 - **크롤링 후 db 저장 자동화** - Github Actions으로 정해진 시간 마다 크롤링(cheerio) 후 Firebase에 저장 :
   https://github.com/PARKmaker/NewHotdeal/blob/main/.github/workflows/node.js.yml
-- **TypeScript 도입** : https://github.com/PARKmaker/NewHotdeal/tree/main/client/src/products.ts
-- **Class를 이용한 Store관리를 통한 유지보수 용이에 초점** : https://github.com/PARKmaker/NewHotdeal/tree/main/client/src/services/productService.ts
+- **TypeScript 도입** : https://github.com/PARKmaker/NewHotdeal/blob/main/client/src/models/product.ts
+- **Class를 이용한 Store관리를 통한 유지보수 용이에 초점** : https://github.com/PARKmaker/NewHotdeal/blob/main/client/src/services/productService/productService.ts
 - **Grid 도입을 통한 반응형 상품목록 페이지**
 - 11번가와, G마켓 구현완료(다른 사이트는 계속 업데이트 될 예정).
 
