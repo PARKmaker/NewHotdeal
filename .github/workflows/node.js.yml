@@ -1,67 +1,67 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+# # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Node.js CI
+# name: Node.js CI
 
-on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
-  schedule:
-    - cron: "30 23,2,5,8,11,14,17 * * *" # 한국 시간 기준 아침 8:30 ~ 새벽 2:30 3시간 간격으로 실행 
+# on:
+#   push:
+#     branches: ["main"]
+#   pull_request:
+#     branches: ["main"]
+#   schedule:
+#     - cron: "30 23,2,5,8,11,14,17 * * *" # 한국 시간 기준 아침 8:30 ~ 새벽 2:30 3시간 간격으로 실행 
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    env:
-      working-directory: ./server
-    strategy:
-      matrix:
-        node-version: ["18.17.0"]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-    steps:
-      - name: Setup timezone
-        uses: zcong1993/setup-timezone@master
-        with:
-          timezone: Asia/Seoul
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     env:
+#       working-directory: ./server
+#     strategy:
+#       matrix:
+#         node-version: ["18.17.0"]
+#         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+#     steps:
+#       - name: Setup timezone
+#         uses: zcong1993/setup-timezone@master
+#         with:
+#           timezone: Asia/Seoul
 
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: "npm"
-          cache-dependency-path: "server/package-lock.json"
+#       - uses: actions/checkout@v3
+#       - name: Use Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#           cache: "npm"
+#           cache-dependency-path: "server/package-lock.json"
 
-      - name: npm ci
-        run: npm ci
-        working-directory: ${{ env.working-directory }}
+#       - name: npm ci
+#         run: npm ci
+#         working-directory: ${{ env.working-directory }}
 
-      - name: create dotenv
-        run: |
-          touch .env
-          echo "API_KEY=${{ secrets.API_KEY }}" >> .env
-          echo "APP_ID=${{ secrets.APP_ID }}" >> .env
-          echo "AUTH_DOMAIN=${{ secrets.AUTH_DOMAIN }}" >> .env
-          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env
-          echo "PROJECT_ID=${{ secrets.PROJECT_ID }}" >> .env
-          echo "STORAGE_BUCKET=${{ secrets.STORAGE_BUCKET }}" >> .env
-          echo "MESSAGING_SENDER_ID=${{ secrets.MESSAGING_SENDER_ID }}" >> .env
-          echo "MEASUREMENT_ID=${{ secrets.MEASUREMENT_ID }}" >> .env
-          ls -al
+#       - name: create dotenv
+#         run: |
+#           touch .env
+#           echo "API_KEY=${{ secrets.API_KEY }}" >> .env
+#           echo "APP_ID=${{ secrets.APP_ID }}" >> .env
+#           echo "AUTH_DOMAIN=${{ secrets.AUTH_DOMAIN }}" >> .env
+#           echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env
+#           echo "PROJECT_ID=${{ secrets.PROJECT_ID }}" >> .env
+#           echo "STORAGE_BUCKET=${{ secrets.STORAGE_BUCKET }}" >> .env
+#           echo "MESSAGING_SENDER_ID=${{ secrets.MESSAGING_SENDER_ID }}" >> .env
+#           echo "MEASUREMENT_ID=${{ secrets.MEASUREMENT_ID }}" >> .env
+#           ls -al
 
-          touch server/.env
-          echo "API_KEY=${{ secrets.API_KEY }}" >> server/.env
-          echo "APP_ID=${{ secrets.APP_ID }}" >> server/.env
-          echo "AUTH_DOMAIN=${{ secrets.AUTH_DOMAIN }}" >> server/.env
-          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> server/.env
-          echo "PROJECT_ID=${{ secrets.PROJECT_ID }}" >> server/.env
-          echo "STORAGE_BUCKET=${{ secrets.STORAGE_BUCKET }}" >> server/.env
-          echo "MESSAGING_SENDER_ID=${{ secrets.MESSAGING_SENDER_ID }}" >> server/.env
-          echo "MEASUREMENT_ID=${{ secrets.MEASUREMENT_ID }}" >> server/.env
-          ls server -al
+#           touch server/.env
+#           echo "API_KEY=${{ secrets.API_KEY }}" >> server/.env
+#           echo "APP_ID=${{ secrets.APP_ID }}" >> server/.env
+#           echo "AUTH_DOMAIN=${{ secrets.AUTH_DOMAIN }}" >> server/.env
+#           echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> server/.env
+#           echo "PROJECT_ID=${{ secrets.PROJECT_ID }}" >> server/.env
+#           echo "STORAGE_BUCKET=${{ secrets.STORAGE_BUCKET }}" >> server/.env
+#           echo "MESSAGING_SENDER_ID=${{ secrets.MESSAGING_SENDER_ID }}" >> server/.env
+#           echo "MEASUREMENT_ID=${{ secrets.MEASUREMENT_ID }}" >> server/.env
+#           ls server -al
 
-      - name: npm start
-        run: npm start
-        working-directory: ${{ env.working-directory }}
+#       - name: npm start
+#         run: npm start
+#         working-directory: ${{ env.working-directory }}
