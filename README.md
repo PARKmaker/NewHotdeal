@@ -1,4 +1,4 @@
-# 박상현
+![image](https://github.com/PARKmaker/NewHotdeal/assets/77065758/3fcfda53-1e44-4f5b-ac1e-6fab9bfc4292)# 박상현
 
 <div align="center">
 
@@ -23,6 +23,8 @@
 
 ## 아키텍쳐
 
+![image](https://github.com/PARKmaker/NewHotdeal/assets/77065758/0c189516-d436-498f-b998-8aad2db8527f)
+
 ![핫딜 아키텍처](https://github.com/PARKmaker/NewHotdeal/assets/77065758/5c238e56-7686-4dda-b825-25d49742e270)
 
 </div>
@@ -31,7 +33,13 @@
 
 - 다양한 쇼핑몰의 핫딜(할인딜)을 가져와 한 페이지에 보여주고, 필터링을 통해 원하는 사이트 또는 제품을 보여 줄 수 있다.
 
-### :dart: 특징
+## 기능
+
+- 11번가와 G마켓의 핫딜(쇼킹딜, 슈퍼딜)을 주기적으로 파싱하여 Firebase에 저장.
+- 핫딜을 가져와 사용자에게 보여준다.
+- 상품 필터링과 자동 완성 검색을 제공한다.
+
+## :dart: 특징
 
 - **크롤링 후 db 저장 자동화** - Github Actions으로 정해진 시간 마다 크롤링(cheerio) 후 Firebase에 저장 :
   https://github.com/PARKmaker/NewHotdeal/blob/main/.github/workflows/node.js.yml
@@ -56,7 +64,7 @@
 <summary>CI/CD</summary>
   <ul>
     <li><a href="https://firebase.google.com">Firebase Realtime Database</a></li>
-    <li><a href="https://github.com/">Github    actions</a></li>
+    <li><a href="https://github.com/">Github actions</a></li>
   </ul>
 </details>
 
