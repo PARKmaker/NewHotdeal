@@ -2,7 +2,7 @@
  * @description 상품 index 번호 섞기
  */
 
-export function makeShuffleNumbers(dataLength: number) {
+export function makeShuffleIndexList(dataLength: number) {
   let arrayN: number[] = Array(dataLength);
 
   for (let i = 0; i < dataLength; i++) {

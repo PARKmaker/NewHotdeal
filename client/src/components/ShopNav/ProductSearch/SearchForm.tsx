@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import style from "./SearchForm.module.css";
-import { ProductFeed, FilterValues } from "../../../models/product";
+import { ProductFeed } from "../../../models/product";
 import AutoSearch from "./AutoSearch";
 import ProductItem from "../../Shop/ProductItem";
-import SearchItemWrapper from "./SearchItemWrapper";
+import SearchModalWrapper from "./SearchModalWrapper";
 import HoverItemWrapper from "./HoverItemWrapper";
+import ModalBackdrop from "./ModalBackdrop";
 
 const initialHoverProduct = {
   key: "",
@@ -33,6 +34,12 @@ const SearchForm: React.FC<{ products: ProductFeed[] }> = ({ products }) => {
     setSearchKeyword(() => event.target.value);
   };
 
+  const inputFocusHandler = () => {
+    if (searchKeyword.trim().length >= 1) {
+      setTimeout(() => setIsAutoSearch(true), 250);
+    }
+  };
+
   const mouseHoverHandler = (value: boolean) => {
     setisHover(() => value);
   };
@@ -47,6 +54,10 @@ const SearchForm: React.FC<{ products: ProductFeed[] }> = ({ products }) => {
       );
     }
   }
+
+  const closeModalHandler = (event: React.MouseEvent) => {
+    setIsAutoSearch(() => false);
+  };
 
   useEffect(() => {
     if (searchKeyword.trim().length > 0) {
@@ -76,30 +87,34 @@ const SearchForm: React.FC<{ products: ProductFeed[] }> = ({ products }) => {
           name="search"
           placeholder="상품 검색"
           onChange={inputSearchHandler}
+          onFocus={inputFocusHandler}
         />
       </div>
       {isAutoSearch && (
-        <SearchItemWrapper>
-          <AutoSearch
-            onProductId={(id) => hoverProductFilter(id)}
-            onHover={mouseHoverHandler}
-            product={searchedProducts}
-          />
-          {isHover && (
-            <HoverItemWrapper>
-              <ProductItem
-                key={hoveringProduct.id}
-                id={hoveringProduct.id}
-                title={hoveringProduct.title}
-                info={hoveringProduct.info}
-                siteName={hoveringProduct.siteName}
-                thumnail={hoveringProduct.thumnail}
-                href={hoveringProduct.href}
-                endDate={hoveringProduct.endDate}
-              />
-            </HoverItemWrapper>
-          )}
-        </SearchItemWrapper>
+        <Fragment>
+          <ModalBackdrop onCloseModal={closeModalHandler} />
+          <SearchModalWrapper>
+            <AutoSearch
+              onProductId={(id) => hoverProductFilter(id)}
+              onHover={mouseHoverHandler}
+              product={searchedProducts}
+            />
+            {isHover && (
+              <HoverItemWrapper>
+                <ProductItem
+                  key={hoveringProduct.id}
+                  id={hoveringProduct.id}
+                  title={hoveringProduct.title}
+                  info={hoveringProduct.info}
+                  siteName={hoveringProduct.siteName}
+                  thumnail={hoveringProduct.thumnail}
+                  href={hoveringProduct.href}
+                  endDate={hoveringProduct.endDate}
+                />
+              </HoverItemWrapper>
+            )}
+          </SearchModalWrapper>
+        </Fragment>
       )}
     </div>
   );

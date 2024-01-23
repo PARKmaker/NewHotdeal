@@ -3,11 +3,11 @@ import style from "./Products.module.css";
 import ProductItem from "./ProductItem";
 import dummy_data from "../dummyData.json";
 // import { getData } from "../../services/firbase";
-import { makeShuffleNumbers } from "../../utils/suffle";
+import { makeShuffleIndexList } from "../../utils/suffle";
 import { FilterValues, ProductFeed, ProductStore } from "../../models/product";
 import ShopNav from "../ShopNav/ShopNav";
-import SearchForm from "../ShopNav/Search/SearchForm";
-import FilterForm from "../ShopNav/Checkbox/FilterForm";
+import SearchForm from "../ShopNav/ProductSearch/SearchForm";
+import CheckboxFilterForm from "../ShopNav/SiteFilter/CheckboxFilterForm";
 
 /**
  * @description 상품 목록 페이지
@@ -16,15 +16,15 @@ import FilterForm from "../ShopNav/Checkbox/FilterForm";
 const Products: React.FC<{ store: ProductStore }> = ({ store }) => {
   // let productsData = getData();
   const [productsContents, setProductsContents] = useState<JSX.Element[]>();
-  const [products, setProducts] = useState<ProductFeed[]>(
-    store.getAllProducts()
-  );
+  // const [products, setProducts] = useState<ProductFeed[]>(
+  //   store.getAllProducts()
+  // );
 
-  function makeProductsContent(data: ProductFeed[], arrayIdx: number[]) {
+  function makeProductsContent(products: ProductFeed[], arrayIdx: number[]) {
     // 무작위 순서로 products 컴포넌트 만들기
     let content = [];
     for (let idx of arrayIdx) {
-      const product = data[idx];
+      const product = products[idx];
       const info = {
         discountRate: product.info.discountRate,
         discountedPrice: product.info.discountedPrice,
@@ -52,16 +52,16 @@ const Products: React.FC<{ store: ProductStore }> = ({ store }) => {
     setProductsContents(
       makeProductsContent(
         filteredProducts,
-        makeShuffleNumbers(filteredProducts.length)
+        makeShuffleIndexList(filteredProducts.length)
       )
     );
-    setProducts(filteredProducts);
+    // setProducts(filteredProducts);
   };
 
   useEffect(() => {
     // 첫 페이지 렌더링 때 컴포넌트 만들기
     setProductsContents(
-      makeProductsContent(dummy_data, makeShuffleNumbers(dummy_data.length))
+      makeProductsContent(dummy_data, makeShuffleIndexList(dummy_data.length))
     );
   }, []);
 
@@ -70,12 +70,12 @@ const Products: React.FC<{ store: ProductStore }> = ({ store }) => {
       <nav className={style[`nav`]}>
         <ShopNav>
           <SearchForm products={store.getAllProducts()} />
-          <FilterForm
+          <CheckboxFilterForm
             siteNames={store.getSiteNames()}
             onSubmit={submitFilterHandler}
           />
         </ShopNav>
-        {/* <SiteFilterForm
+        {/* <SiteCheckboxFilterForm
           siteNames={store.getSiteNames()}
           onSubmit={submitFilterHandler}
         /> */}

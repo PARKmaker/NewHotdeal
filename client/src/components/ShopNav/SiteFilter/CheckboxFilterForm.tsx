@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import style from "./FilterForm.module.css";
+import React, { useState } from "react";
+import style from "./CheckboxFilterForm.module.css";
 import { FilterValues } from "../../../models/product";
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
   onSubmit: (values: FilterValues) => void;
 }
 
-const FilterForm: React.FC<Props> = (props) => {
+const CheckboxFilterForm: React.FC<Props> = (props) => {
   const [values, setValues] = useState({
     brands: props.siteNames,
     search: "",
@@ -63,4 +63,4 @@ const FilterForm: React.FC<Props> = (props) => {
   );
 };
 
-export default FilterForm;
+export default CheckboxFilterForm;

@@ -1,12 +1,12 @@
 import React from "react";
-import style from "./SearchItemWrapper.module.css";
+import style from "./SearchModalWrapper.module.css";
 
 type Props = {
   children?: React.ReactNode;
 };
 
-const SearchItemWrapper = ({ children }: Props) => {
+const SearchModalWrapper = ({ children }: Props) => {
   return <section className={style["item"]}>{children}</section>;
 };
 
-export default SearchItemWrapper;
+export default SearchModalWrapper;
