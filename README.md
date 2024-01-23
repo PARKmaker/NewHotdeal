@@ -1,4 +1,4 @@
-![image](https://github.com/PARKmaker/NewHotdeal/assets/77065758/3fcfda53-1e44-4f5b-ac1e-6fab9bfc4292)# 박상현
+# 박상현
 
 <div align="center">
 
