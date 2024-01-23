@@ -23,7 +23,7 @@
 
 ## 아키텍쳐
 
-<img width="566" alt="아키텍처1" src="https://github.com/PARKmaker/NewHotdeal/assets/77065758/76bf3abe-5539-4f9b-9df3-e3e54e03f8bf">
+![핫딜 아키텍처](https://github.com/PARKmaker/NewHotdeal/assets/77065758/5c238e56-7686-4dda-b825-25d49742e270)
 
 </div>
 
@@ -59,6 +59,24 @@
     <li><a href="https://github.com/">Github    actions</a></li>
   </ul>
 </details>
+
+## :grey_question: 개발하면서 고민한점
+
+- 크롤링시 인코딩 문제와, Script 태그 크롤링을 위한 vm모듈 사용 : https://velog.io/@tkdgus8903/Hotdeal-%EC%9B%B9-%EC%84%9C%EB%B9%84%EC%8A%A4-%EB%A7%8C%EB%93%A4%EA%B8%B0-1-%ED%81%AC%EB%A1%A4%EB%A7%81-%ED%95%98%EA%B8%B0
+- Github actions에서 Cron을 스케쥴링, 매시간 마다 크롤링 코드를 실행하고 이를 Firebase에 저장.
+- 관심사 분리와 유지보수 상승을 위한 Store Class구현.
+
+### 추가 이미지 자료
+
+#### db데이터 json구조
+
+![image](https://github.com/PARKmaker/NewHotdeal/assets/77065758/995c5810-50df-4d25-a98c-03929f7ce7b5)
+
+#### Github Actions Workflows
+
+![image](https://github.com/PARKmaker/NewHotdeal/assets/77065758/b8952fd4-7dcf-485a-9a65-13208c969a7b)
+
+![image](https://github.com/PARKmaker/NewHotdeal/assets/77065758/2265bc65-8a47-4bb1-a7ac-62561c4d639c)
 
 ### :key: Environment Variables
 
@@ -121,20 +139,3 @@ Start the server // 파이어베이스 환경설정 필요
   node firebase.js
 ```
 
-## :grey_question: 개발하면서 고민한점
-
-- 크롤링시 인코딩 문제와, Script 태그 크롤링을 위한 vm모듈 사용 : https://velog.io/@tkdgus8903/Hotdeal-%EC%9B%B9-%EC%84%9C%EB%B9%84%EC%8A%A4-%EB%A7%8C%EB%93%A4%EA%B8%B0-1-%ED%81%AC%EB%A1%A4%EB%A7%81-%ED%95%98%EA%B8%B0
-- Github actions에서 Cron을 스케쥴링, 매시간 마다 크롤링 코드를 실행하고 이를 Firebase에 저장.
-- 관심사 분리와 유지보수 상승을 위한 Store Class구현.
-
-### 추가 이미지 자료
-
-#### db데이터 json구조
-
-![image](https://github.com/PARKmaker/NewHotdeal/assets/77065758/995c5810-50df-4d25-a98c-03929f7ce7b5)
-
-#### Github Actions Workflows
-
-![image](https://github.com/PARKmaker/NewHotdeal/assets/77065758/b8952fd4-7dcf-485a-9a65-13208c969a7b)
-
-![image](https://github.com/PARKmaker/NewHotdeal/assets/77065758/2265bc65-8a47-4bb1-a7ac-62561c4d639c)
