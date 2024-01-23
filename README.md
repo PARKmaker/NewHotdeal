@@ -23,11 +23,9 @@
 
 ## 아키텍쳐
 
-<img width="600" alt="핫딜 아키텍처 2" src="https://github.com/PARKmaker/NewHotdeal/assets/77065758/f7d59ec0-4528-4b8d-b6ce-e5bb973b758b">
+<img width="500" alt="핫딜 아키텍처 2" src="https://github.com/PARKmaker/NewHotdeal/assets/77065758/f7d59ec0-4528-4b8d-b6ce-e5bb973b758b">
 
-
-![핫딜 아키텍처](https://github.com/PARKmaker/NewHotdeal/assets/77065758/5c238e56-7686-4dda-b825-25d49742e270)
-<img width="749" alt="핫딜 아키텍처 2" src="https://github.com/PARKmaker/NewHotdeal/assets/77065758/dd5de9f6-f921-4c41-9a4c-0f7c8c7f3003">
+<img width="500" alt="핫딜 아키텍처 2" src="https://github.com/PARKmaker/NewHotdeal/assets/77065758/dd5de9f6-f921-4c41-9a4c-0f7c8c7f3003">
 
 </div>
 
