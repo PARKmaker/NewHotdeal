@@ -13,13 +13,13 @@
 
 ## :star2: 배포 링크
 
-<a href="#">배포 사이트</a> **: 배포 비활성화 : Data Fetch 최적화 문제**
+<a href="https://hotdeal.vercel.app/">배포 사이트</a> **DB 최적화 문제로 인한 프론트엔드만 배포**
 
+<!--
 ## :camera: 데모 영상 : 유튜브 링크
 
 ## [![Video Label](https://img.youtube.com/vi/ycLI25jkSeU/0.jpg)](https://youtu.be/ycLI25jkSeU)
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ycLI25jkSeU?si=49kaIJAIWwi5pg6d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+-->
 
 ## 아키텍쳐
 
