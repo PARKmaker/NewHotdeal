@@ -19,6 +19,8 @@
 
 ## [![Video Label](https://img.youtube.com/vi/ycLI25jkSeU/0.jpg)](https://youtu.be/ycLI25jkSeU)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ycLI25jkSeU?si=49kaIJAIWwi5pg6d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## 아키텍쳐
 
 <img width="566" alt="아키텍처1" src="https://github.com/PARKmaker/NewHotdeal/assets/77065758/76bf3abe-5539-4f9b-9df3-e3e54e03f8bf">
