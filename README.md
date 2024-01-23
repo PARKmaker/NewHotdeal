@@ -73,6 +73,7 @@
 - 크롤링시 인코딩 문제와, Script 태그 크롤링을 위한 vm모듈 사용 : https://velog.io/@tkdgus8903/Hotdeal-%EC%9B%B9-%EC%84%9C%EB%B9%84%EC%8A%A4-%EB%A7%8C%EB%93%A4%EA%B8%B0-1-%ED%81%AC%EB%A1%A4%EB%A7%81-%ED%95%98%EA%B8%B0
 - Github actions에서 Cron을 스케쥴링, 매시간 마다 크롤링 코드를 실행하고 이를 Firebase에 저장.
 - 관심사 분리와 유지보수 상승을 위한 Store Class구현.
+- 병렬 프라미스 처리시 Promise.all()의 사용 방법을 익힘.
 
 ### 추가 이미지 자료
 
