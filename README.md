@@ -23,7 +23,7 @@
 
 ## 아키텍쳐
 
-<img src="[](https://github.com/PARKmaker/NewHotdeal/assets/77065758/0c189516-d436-498f-b998-8aad2db8527f)" width="600" height="400"/>
+<img src="[](https://github.com/PARKmaker/NewHotdeal/assets/77065758/0c189516-d436-498f-b998-8aad2db8527f.png)" width="600" height="400"/>
 
 ![핫딜 아키텍처](https://github.com/PARKmaker/NewHotdeal/assets/77065758/5c238e56-7686-4dda-b825-25d49742e270)
 
